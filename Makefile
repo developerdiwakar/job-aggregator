@@ -18,6 +18,7 @@ port-forward:
 	@echo "Port forwarding to $(APP_PORT)...."
 	kubectl port-forward service/job-aggregator-service $(APP_PORT):$(APP_PORT)
 
+# Kubernetes related commands
 kube-apply: kube-apply-deploy kube-apply-service
 
 kube-apply-deploy:
