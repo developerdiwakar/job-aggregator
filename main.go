@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"net/http"
 
 	"github.com/labstack/echo/v4"
@@ -26,5 +27,7 @@ func main() {
 	})
 
 	// start server
-	app.Logger.Fatal(app.Start(":3031"))
+	var port string = "3031"
+	log.Println("App Listening on :", port)
+	app.Logger.Fatal(app.Start(":" + port))
 }
