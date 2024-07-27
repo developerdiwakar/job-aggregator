@@ -1,7 +1,7 @@
 # Define Variables
 APP_PORT=3031
-KUBE_DEPLOY_FILE="deployment.yaml"
-KUBE_SERVICE_FILE="service.yaml"
+DEPLOYMENT_YAML="deployment.yaml"
+SERVICE_YAML="service.yaml"
 
 # Run Build and port forward commands
 up: build port-forward
@@ -21,7 +21,7 @@ port-forward:
 kube-apply: kube-apply-deploy kube-apply-service
 
 kube-apply-deploy:
-	kubectl apply -f $(KUBE_DEPLOY_FILE)
+	kubectl apply -f $(DEPLOYMENT_YAML)
 
 kube-apply-service:
-	kubectl apply -f $(KUBE_SERVICE_FILE)
+	kubectl apply -f $(SERVICE_YAML)
